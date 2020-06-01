@@ -34,7 +34,7 @@ class DispatchCommand(object):
                     os.remove(file_name)
 
         # 替换application.py中的宏
-        server_port = self._options.server_port or "8081"
+        server_port = str(self._options.server_port or 8081)
         application_path = os.path.join(dst, "application.py")
         if os.path.isfile(application_path):
             with open(application_path, "rb") as fd:
