@@ -9,7 +9,7 @@ __all__ = ["aspect", "get_aspect", "is_aspect_present",
 __authors__ = ["Tim Chow"]
 
 import inspect
-import types
+import types  # used by AdviceFactory, DON'T DELETE IT
 
 from ..reflect import get_declared_fields
 

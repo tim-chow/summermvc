@@ -6,7 +6,6 @@ __authors__ = ["Tim Chow"]
 from functools import wraps
 import inspect
 import sys
-import types
 
 from .joint_point import JointPoint
 from .exception import Return
@@ -240,4 +239,3 @@ if is_tornado_installed:
                 raise gen.Return(returning)
             return _real_logic
         return _inner
-

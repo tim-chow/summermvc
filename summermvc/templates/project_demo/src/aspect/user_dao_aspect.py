@@ -17,13 +17,13 @@ class UserDaoAspect(object):
         return functools.partial(
             self.around_after, time.time())
 
-    def around_after(self,
-                     start_time,
+    @staticmethod
+    def around_after(start_time,
                      jp,
                      returning,
                      exc_info):
-        LOGGER.info("method: %s is called with "
+        LOGGER.info(
+            "method: %s is called with "
             "args: %s, keyword args: %s used %.3fs",
             jp.method, jp.args, jp.kwargs,
             time.time()-start_time)
-
